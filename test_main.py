@@ -3,6 +3,7 @@ from main import app
 
 client = TestClient(app)
 
+
 def test_encode_text():
     response = client.get("/embedding/Hello%20World")
     assert response.status_code == 200
