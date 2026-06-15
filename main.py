@@ -8,5 +8,5 @@ model = SentenceTransformer(model_name)
 
 @app.get("/embedding/{text}")
 def encode_text(text: str):
-    embedding = model.encode(text)
-    return {"embedding": embedding.tolist()}
+    embedding_binary = model.encode(text, precision="binary")
+    return {"embedding_binary": embedding_binary.tolist()}
