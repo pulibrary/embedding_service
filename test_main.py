@@ -5,7 +5,7 @@ client = TestClient(app)
 
 
 def test_encode_text():
-    response = client.get("/embedding/Hello%20World")
+    response = client.get("/embedding?text=Hello%20World")
     assert response.status_code == 200
     data = response.json()
     assert "embedding_binary" in data
