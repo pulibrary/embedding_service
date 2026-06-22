@@ -13,8 +13,8 @@ class EmbeddingRequest(BaseModel):
 
 @app.post("/embedding")
 def encode_text(request: EmbeddingRequest):
-    embedding_binary = model.encode(request.text, precision="ubinary")
-    return {"embedding_binary": embedding_binary.tolist()}
+    embedding= model.encode(request.text)
+    return {"embedding": embedding.tolist()}
 
 
 # example curl from the console
