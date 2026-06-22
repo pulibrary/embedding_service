@@ -13,7 +13,7 @@ class EmbeddingRequest(BaseModel):
 
 @app.post("/embedding")
 def encode_text(request: EmbeddingRequest):
-    embedding_binary = model.encode(request.text, precision="binary")
+    embedding_binary = model.encode(request.text, precision="ubinary")
     return {"embedding_binary": embedding_binary.tolist()}
 
 
