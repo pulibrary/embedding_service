@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 
 app = FastAPI()
-model_name = "multi-qa-mpnet-base-cos-v1"
+model_name = "all-MiniLM-L6-v2"
 model = SentenceTransformer(model_name)
 
 
