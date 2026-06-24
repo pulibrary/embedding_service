@@ -14,7 +14,9 @@ class EmbeddingRequest(BaseModel):
 @app.post("/embedding")
 def encode_text(request: EmbeddingRequest):
     embedding= model.encode(request.text)
-    return {"embedding": embedding.tolist()}
+    rounded_embedding = [round(float(x), 6) for x in embedding]
+
+    return {"embedding": rounded_embedding}
 
 
 # example curl from the console
